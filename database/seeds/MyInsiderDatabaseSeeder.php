@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class MyInsiderDatabaseSeeder extends Seeder
 {
@@ -17,7 +18,8 @@ class MyInsiderDatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => bcrypt('secret'),
             'user_type' => 'admin',
-            'is_active' => '1'
+            'is_active' => '1',
+            'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
 
