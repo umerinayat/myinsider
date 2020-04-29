@@ -17,7 +17,7 @@
 
     <div class="card-header py-3">
         <div class="d-sm-flex align-items-center justify-content-between">
-            <h1 class="h4 mb-0 text-gray-800">  {{ __('labels.Add New Admin') }} test update </h1>
+            <h1 class="h4 mb-0 text-gray-800">  {{ __('labels.Add New Admin') }} </h1>
             <a href="{{ route('viewAdmins') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-users fa-sm"></i>
