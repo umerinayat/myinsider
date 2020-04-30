@@ -59,6 +59,19 @@
                   <tbody>
 
                    @for($i = 0; $i < count($clients); $i++)
+
+                    @php
+
+                    $loc = str_replace('_', '-', app()->getLocale());
+
+                    if ($loc === 'de') {
+                      $isActive = $clients[$i]->user->is_active ? 'Ja' : 'Nein';
+                    } else if ($loc === 'en') {
+                      $isActive = $clients[$i]->user->is_active ? 'YES' : 'NO';
+                    }
+
+                    @endphp
+
                     <tr>
                         <td class="pt-4">{{ $i + 1 }}</td>
                         <td class="p-4">{{   __('auth.'.$clients[$i]->title) }}</td>
@@ -66,7 +79,7 @@
                         <td class="p-4">{{ $clients[$i]->user->last_name }}</td>
                         <td class="p-4">{{ $clients[$i]->user->email }}</td>
                        
-                        <td class="p-4">{{ $clients[$i]->user->is_active ? 'YES' : 'NO' }}</td>
+                        <td class="p-4">{{ $isActive }}</td>
 
                         <td class="p-4"> <a href="{{ route('clients.show', ['client' => $clients[$i]->id]) }}" class=" p-0 m-0">{{__('labels.View')}}</a> , <a href="{{ route('clients.edit', ['client' => $clients[$i]->id]) }}" class=" p-0 m-0">{{__('labels.Edit')}} </a></td>
                         

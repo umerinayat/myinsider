@@ -178,7 +178,21 @@
       <dt class="col-sm-2">{{ __('labels.Email') }}</dt>
       <dd class="col-sm-10 pb-2">{{ $client->user->email }}</dd>
       <dt class="col-sm-2"> {{ __('labels.Is Active') }}</dt>
-      <dd class="col-sm-10">{{ $client->user->is_active ? 'YES' : 'NO'  }}</dd>
+
+      @php
+
+        $loc = str_replace('_', '-', app()->getLocale());
+
+        if ($loc === 'de') {
+          $isActive = $client->user->is_active ? 'Ja' : 'Nein';
+        } else if ($loc === 'en') {
+          $isActive = $client->user->is_active ? 'YES' : 'NO';
+        }
+
+    @endphp
+
+
+      <dd class="col-sm-10">{{ $isActive }}</dd>
     </dl>
 
     
