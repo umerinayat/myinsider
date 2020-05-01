@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
-
 use App\Client;
 use App\Insider;
+
 use App\Project;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class IndexController extends Controller
 {
